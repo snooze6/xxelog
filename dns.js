@@ -8,7 +8,8 @@ function sleep(ms){
 }
 
 server.on('request', function (request, response) {
-  console.log(request)
+  console.log(request.question[0].name + '@' + request.address.address);
+  //console.log(request)
   response.answer.push(dns.A({
     name: request.question[0].name,
     address: '127.0.0.1',
